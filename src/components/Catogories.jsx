@@ -57,8 +57,8 @@ const Catogories = () => {
         <>
             <div className='w-full h-auto mt-8'>
                 <div className='w-full flex justify-center items-center gap-2'>
-                    <h1 className='text-center text-3xl font-extrabold'>Craft Your Ideal Caption</h1>
-                    <span className='text-[30px]'>&#128536;</span>
+                    <h1 className='text-center xl:text-3xl lg:text-3xl md:text-3xl sm:text-xl text-lg font-extrabold'>Craft Your Ideal Caption</h1>
+                    <span className='xl:text-[30px] lg:text-[30px] md:text-[30px] sm:text-[30px] text-[25px]'>&#128536;</span>
                 </div>
 
                 {/* categories */}

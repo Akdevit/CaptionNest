@@ -238,16 +238,16 @@ const Genrate = ({ categorie, mood, socialMedia }) => {
     return (
         <>
             <div className='w-full h-auto pb-6 mt-12'>
-                <div className='w-full h-auto flex justify-center items-center gap-2'>
+                <div className='w-full h-auto flex  justify-center items-center gap-2'>
                     {
                         range.map((item, index) => (
                             <>
-                                <button onClick={() => setSelectionRange(item)} key={index} className={`w-[100px] h-[40px] bg-[#C8B6A6] ${rangeActive === item ? "bg-black text-white" : ""} hover:bg-black hover:text-white rounded-md`}>{item}</button>
+                                <button onClick={() => setSelectionRange(item)} key={index} className={`xl:w-[100px] xl:h-[40px] lg:w-[100px] lg:h-[40px] md:w-[100px] md:h-[40px] sm:w-[100px] sm:h-[40px] p-2 bg-[#C8B6A6] ${rangeActive === item ? "bg-black text-white" : ""} hover:bg-black hover:text-white rounded-md`}>{item}</button>
                             </>
                         ))
                     }
                     {/* select number of genrate caption */}
-                    <select onChange={(e) => setCountCaption(e.target.value)} className='w-[50px] h-[45px] rounded-md text-center bg-[#EDE9D5] cursor-pointer text-black font-bold outline-0 appearance-none '>
+                    <select onChange={(e) => setCountCaption(e.target.value)} className='xl:w-[50px] lg:h-[45px] lg:w-[50px] md:h-[45px] md:w-[50px] sm:h-[45px] sm:w-[50px] xl:h-[45px] p-2 rounded-md text-center bg-[#EDE9D5] cursor-pointer text-black font-bold outline-0 appearance-none '>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

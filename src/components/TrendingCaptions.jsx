@@ -136,7 +136,7 @@ function TrendingCaptions() {
                 {trendingCaptions.map((caption, index) => (
                     <div key={index} className="bg-[#BEC6A0] rounded-lg  p-4 ">
                         <h2 className="text-xl font-semibold text-gray-900 mb-2">{caption.name}</h2>
-                        <div className="flex flex-wrap space-x-2">
+                        <div className="flex flex-wrap gap-2 space-x-2">
                             {caption.categories.map((category, i) => (
                                 <span key={i} className="bg-[#D6E8DB] text-black text-sm font-medium mr-2 px-2.5 py-0.5 rounded">{category}</span>
                             ))}
