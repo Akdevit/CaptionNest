@@ -282,7 +282,7 @@ const Genrate = ({ categorie, mood, socialMedia }) => {
                         <input onChange={(e) => setKeyword(e.target.value)} className='w-[100%] h-[45px] rounded-md outline-0 p-2 bg-[#E1EEDD] ' type='text' placeholder='Enter Hashtags and Keywords' />
                         {/* genrate btn */}
 
-                        <button onClick={generateCaption} className='w-[200px] h-[40px] bg-black text-white rounded-md'>{ailoading ? 'Lodding..' : "Genrate"}</button>
+                        <button onClick={generateCaption} className='w-[200px] h-[40px] bg-black text-white rounded-md'>{ailoading ? 'Generating...' : "Generate"}</button>
 
 
                     </div>
