@@ -169,16 +169,10 @@ const Genrate = ({ categorie, mood, socialMedia }) => {
         setRangeActive(range)
         setRanges(range)
     }
-
-
-
-
-
     /* genreate captions */
     const CaptionGenerate = () => {
         setAiloading(true)
-        const apiKey = 'AIzaSyAuxs0yDG57YwV1jBLvDp06qvuM1d29eec';
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}`;
         const requestData = {
             contents: [
                 {
