@@ -1,0 +1,312 @@
+ useEffect(() => {
+        setAiloading(true)
+        const apiKey = 'AIzaSyAuxs0yDG57YwV1jBLvDp06qvuM1d29eec'; // Replace with your actual API key
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+        const requestData = {
+            contents: [
+                {
+                    parts: [
+                        {
+                            text: `Translate  ${text} into English only translated word`
+                        }
+                    ]
+                }
+            ]
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                // console.log('Success:', data);
+                setTranslatedata(data?.candidates[0]?.content?.parts[0]?.text);
+                setAiloading(false)
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }, [text])
+
+
+
+
+
+
+
+================================================================================================================================
+Sure! Here are detailed lists for the **Category Selector**, **Mood Selector**, and **Social Media Selector** that you can use for your caption generator website:
+
+### **1. Category Selector**
+
+**Dropdown Options:**
+- Food
+- Travel
+- Events
+- Fashion
+- Lifestyle
+- Fitness
+- Beauty
+- Technology
+- Business
+- Entertainment
+- Sports
+- Nature
+- Art
+- Education
+- Health
+- Home & Garden
+- Music
+- Photography
+- Pets
+- Quotes
+
+**Tags (for visual selection):**
+- **Food:** 🍔🍣🍰
+- **Travel:** 🌍✈️🏖️
+- **Events:** 🎉🎂📅
+- **Fashion:** 👗👠🕶️
+- **Lifestyle:** 🛋️🛍️🍷
+- **Fitness:** 🏋️‍♂️🏃‍♀️💪
+- **Beauty:** 💄💅👑
+- **Technology:** 💻📱🖥️
+- **Business:** 💼📈🏢
+- **Entertainment:** 🎬🎮🎤
+- **Sports:** ⚽🏀🏈
+- **Nature:** 🌳🌺🌄
+- **Art:** 🎨🖌️🖼️
+- **Education:** 📚✏️🎓
+- **Health:** 🏥💊🥗
+- **Home & Garden:** 🏡🌿🛋️
+- **Music:** 🎵🎸🎧
+- **Photography:** 📸📷🌄
+- **Pets:** 🐶🐱🐰
+- **Quotes:** 💬📝
+
+### **2. Mood Selector**
+
+**Dropdown Options:**
+- Happy 😊
+- Sad 😢
+- Excited 😃
+- Motivational 💪
+- Inspirational 🌟
+- Funny 😂
+- Romantic ❤️
+- Reflective 🤔
+- Sarcastic 🙃
+- Grateful 🙏
+- Proud 🏆
+- Relaxed 😌
+- Energetic ⚡
+- Serious 😐
+
+**Icons (for visual selection):**
+- **Happy:** 😊🌞
+- **Sad:** 😢☔
+- **Excited:** 😃🎉
+- **Motivational:** 💪🔥
+- **Inspirational:** 🌟💫
+- **Funny:** 😂🤣
+- **Romantic:** ❤️💋
+- **Reflective:** 🤔🧠
+- **Sarcastic:** 🙃😏
+- **Grateful:** 🙏✨
+- **Proud:** 🏆👏
+- **Relaxed:** 😌🌿
+- **Energetic:** ⚡💥
+- **Serious:** 😐🧐
+
+### **3. Social Media Selector**
+
+**Dropdown Options:**
+- Instagram
+- Twitter
+- Facebook
+- LinkedIn
+- Pinterest
+- Snapchat
+- TikTok
+- YouTube
+- Tumblr
+- Reddit
+
+**Icons (for visual selection):**
+- **Instagram:** 📸
+- **Twitter:** 🐦
+- **Facebook:** 📘
+- **LinkedIn:** 💼
+- **Pinterest:** 📍
+- **Snapchat:** 👻
+- **TikTok:** 🎵
+- **YouTube:** ▶️
+- **Tumblr:** 📝
+- **Reddit:** 👽
+
+### **How to Implement These in Your UI**
+
+1. **Category Selector:**
+   - Use a dropdown menu or a tag cloud where users can click on tags to filter captions.
+
+2. **Mood Selector:**
+   - Implement a dropdown menu or use icons that users can click to select the desired mood.
+
+3. **Social Media Selector:**
+   - Create a dropdown or use icons that users can click to select the social media platform where they want to use the caption.
+
+By including these lists and implementing them in your UI, you will provide users with an easy and intuitive way to generate captions that fit their needs and preferences.
+
+
+
+
+
+  const languages = [
+        { "name": "English", "code": "en" },
+        { "name": "Hindi", "code": "hi" },
+        { "name": "Abkhaz", "code": "ab" },
+        { "name": "Afar", "code": "aa" },
+        { "name": "Afrikaans", "code": "af" },
+        { "name": "Akan", "code": "ak" },
+        { "name": "Albanian", "code": "sq" },
+        { "name": "Amharic", "code": "am" },
+        { "name": "Arabic", "code": "ar" },
+        { "name": "Aragonese", "code": "an" },
+        { "name": "Armenian", "code": "hy" },
+        { "name": "Assamese", "code": "as" },
+        { "name": "Avar", "code": "av" },
+        { "name": "Avestan", "code": "ae" },
+        { "name": "Aymara", "code": "ay" },
+        { "name": "Azerbaijani", "code": "az" },
+        { "name": "Bashkir", "code": "ba" },
+        { "name": "Basque", "code": "eu" },
+        { "name": "Belarusian", "code": "be" },
+        { "name": "Bengali", "code": "bn" },
+        { "name": "Bislama", "code": "bi" },
+        { "name": "Bosnian", "code": "bs" },
+        { "name": "Breton", "code": "br" },
+        { "name": "Bulgarian", "code": "bg" },
+        { "name": "Burmese", "code": "my" },
+        { "name": "Catalan", "code": "ca" },
+        { "name": "Cebuano", "code": "ceb" },
+        { "name": "Chichewa", "code": "ny" },
+        { "name": "Chinese (Mandarin)", "code": "zh" },
+        { "name": "Church Slavonic", "code": "cu" },
+        { "name": "Chuvash", "code": "cv" },
+        { "name": "Cornish", "code": "kw" },
+        { "name": "Corsican", "code": "co" },
+        { "name": "Cree", "code": "cr" },
+        { "name": "Croatian", "code": "hr" },
+        { "name": "Czech", "code": "cs" },
+        { "name": "Danish", "code": "da" },
+        { "name": "Divehi", "code": "dv" },
+        { "name": "Dutch", "code": "nl" },
+        { "name": "Dzongkha", "code": "dz" },
+        { "name": "Esperanto", "code": "eo" },
+        { "name": "Estonian", "code": "et" },
+        { "name": "Ewe", "code": "ee" },
+        { "name": "Fijian", "code": "fj" },
+        { "name": "Finnish", "code": "fi" },
+        { "name": "French", "code": "fr" },
+        { "name": "Fula", "code": "ff" },
+        { "name": "Galician", "code": "gl" },
+        { "name": "Georgian", "code": "ka" },
+        { "name": "German", "code": "de" },
+        { "name": "Ganda", "code": "lg" },
+        { "name": "Greek", "code": "el" },
+        { "name": "Guarani", "code": "gn" },
+        { "name": "Gujarati", "code": "gu" },
+        { "name": "Haitian Creole", "code": "ht" },
+        { "name": "Hausa", "code": "ha" },
+        { "name": "Hebrew", "code": "he" },
+        { "name": "Herero", "code": "hz" },
+        { "name": "Hmong", "code": "hmn" },
+        { "name": "Hungarian", "code": "hu" },
+        { "name": "Ibanag", "code": "ib" },
+        { "name": "Icelandic", "code": "is" },
+        { "name": "Igbo", "code": "ig" },
+        { "name": "Indonesian", "code": "id" },
+        { "name": "Interlingua", "code": "ia" },
+        { "name": "Inuktitut", "code": "iu" },
+        { "name": "Irish", "code": "ga" },
+        { "name": "Italian", "code": "it" },
+        { "name": "Japanese", "code": "ja" },
+        { "name": "Javanese", "code": "jv" },
+        { "name": "Kalaallisut", "code": "kl" },
+        { "name": "Kannada", "code": "kn" },
+        { "name": "Kazakh", "code": "kk" },
+        { "name": "Khmer", "code": "km" },
+        { "name": "Kikuyu", "code": "ki" },
+        { "name": "Kinyarwanda", "code": "rw" },
+        { "name": "Kirmanjki", "code": "kmr" },
+        { "name": "Korean", "code": "ko" },
+        { "name": "Kurdish", "code": "ku" },
+        { "name": "Kyrgyz", "code": "ky" },
+        { "name": "Lao", "code": "lo" },
+        { "name": "Latin", "code": "la" },
+        { "name": "Latvian", "code": "lv" },
+        { "name": "Limburgish", "code": "li" },
+        { "name": "Lingala", "code": "ln" },
+        { "name": "Lithuanian", "code": "lt" },
+        { "name": "Luxembourgish", "code": "lb" },
+        { "name": "Macedonian", "code": "mk" },
+        { "name": "Malagasy", "code": "mg" },
+        { "name": "Malay", "code": "ms" },
+        { "name": "Malayalam", "code": "ml" },
+        { "name": "Maltese", "code": "mt" },
+        { "name": "Manx", "code": "gv" },
+        { "name": "Mongolian", "code": "mn" },
+        { "name": "Nepali", "code": "ne" },
+        { "name": "Norwegian", "code": "no" },
+        { "name": "Nyanja", "code": "ny" },
+        { "name": "Occitan", "code": "oc" },
+        { "name": "Oromo", "code": "om" },
+        { "name": "Ossetian", "code": "os" },
+        { "name": "Pali", "code": "pi" },
+        { "name": "Panjabi", "code": "pa" },
+        { "name": "Pashto", "code": "ps" },
+        { "name": "Persian", "code": "fa" },
+        { "name": "Polish", "code": "pl" },
+        { "name": "Portuguese", "code": "pt" },
+        { "name": "Quechua", "code": "qu" },
+        { "name": "Romanian", "code": "ro" },
+        { "name": "Russian", "code": "ru" },
+        { "name": "Samoan", "code": "sm" },
+        { "name": "Sanskrit", "code": "sa" },
+        { "name": "Scots Gaelic", "code": "gd" },
+        { "name": "Serbian", "code": "sr" },
+        { "name": "Sesotho", "code": "st" },
+        { "name": "Shona", "code": "sn" },
+        { "name": "Sichuan Yi", "code": "ii" },
+        { "name": "Sindhi", "code": "sd" },
+        { "name": "Sinhala", "code": "si" },
+        { "name": "Slovak", "code": "sk" },
+        { "name": "Slovenian", "code": "sl" },
+        { "name": "Somali", "code": "so" },
+        { "name": "Spanish", "code": "es" },
+        { "name": "Sundanese", "code": "su" },
+        { "name": "Swahili", "code": "sw" },
+        { "name": "Swedish", "code": "sv" },
+        { "name": "Tajik", "code": "tg" },
+        { "name": "Tamil", "code": "ta" },
+        { "name": "Tatar", "code": "tt" },
+        { "name": "Telugu", "code": "te" },
+        { "name": "Thai", "code": "th" },
+        { "name": "Tigrinya", "code": "ti" },
+        { "name": "Tok Pisin", "code": "tok" },
+        { "name": "Tonga", "code": "to" },
+        { "name": "Turkish", "code": "tr" },
+        { "name": "Turkmen", "code": "tk" },
+        { "name": "Twi", "code": "tw" },
+        { "name": "Ukrainian", "code": "uk" },
+        { "name": "Urdu", "code": "ur" },
+        { "name": "Uzbek", "code": "uz" },
+        { "name": "Vietnamese", "code": "vi" },
+        { "name": "Wolof", "code": "wo" },
+        { "name": "Xhosa", "code": "xh" },
+        { "name": "Yoruba", "code": "yo" },
+        { "name": "Zulu", "code": "zu" }
+    ]
