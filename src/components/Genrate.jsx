@@ -201,6 +201,7 @@ const Genrate = ({ categorie, mood, socialMedia }) => {
             .then(data => {
                 setCaptiondata(data?.candidates[0]?.content?.parts[0]?.text);
                 setAiloading(false)
+                console.log(data)
                 toast.success('Caption genrated successfully')
             })
             .catch(error => {
